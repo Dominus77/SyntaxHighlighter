@@ -18,6 +18,7 @@ class SyntaxHighlighterAsset extends AssetBundle
     public $css = [
         'styles/shCoreDefault.css',
         'styles/shThemeDefault.css',
+        'fix.css',
     ];
 
     public $js = [
