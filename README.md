@@ -1,4 +1,4 @@
-Syntax Highlighter
+Syntax Highlighter for Yii2
 ===============================
 Code syntax highlighting on your web page
 ---
