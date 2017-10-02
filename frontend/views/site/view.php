@@ -9,9 +9,10 @@ SyntaxHighlighterAsset::register($this);
 <div class="site-view">
 	<h2>Example code content</h2>
 
-	<pre class="brush:php;auto-links:false;html-script:true;toolbar:false" contenteditable="false">
-	echo "Hello World";
-	</pre>
+	<pre class="brush:php;auto-links:false;toolbar:false" contenteditable="false">
+        $str = "Hello World!";
+        echo $str;
+    </pre>
 
 <p>&nbsp;</p>
 </div>
