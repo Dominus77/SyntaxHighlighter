@@ -13,7 +13,7 @@ use common\assets\SyntaxHighlighterAsset;
 SyntaxHighlighterAsset::register($this);
 ?>
 
-<!-- Content -->
+<!-- Example content -->
 <pre class="brush:php; auto-links:false; toolbar:false" contenteditable="false">
     public function actionContact()
     {
