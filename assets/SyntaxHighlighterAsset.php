@@ -11,26 +11,43 @@ use yii\web\JsExpression;
  */
 class SyntaxHighlighterAsset extends AssetBundle
 {
+    const THEME_DEFAULT = 'Default';
+    const THEME_DJANGO = 'Django';
+    const THEME_ECLIPSE = 'Eclipse';
+    const THEME_EMACS = 'Emacs';
+    const THEME_FADE_TO_GREY = 'FadeToGrey';
+    const THEME_MD_ULTRA = 'MDUltra';
+    const THEME_MIDNIGHT = 'Midnight';
+    const THEME_R_DARK = 'RDark';
+
     public $sourcePath = '@common/assets/src/syntaxhighlighter';
+
+    public static $theme;
+    public static $fix = true;
+
+    public $css = [];
+    public $js;
 
     private static $_asset;
 
-    public $css = [        
-        'styles/shCoreDefault.css',
-        'styles/shThemeDefault.css', 
-        'fix.css',
-    ];
+    public function init()
+    {
+        $theme = self::$theme ? self::$theme : self::THEME_DEFAULT;
 
-    public $js = [
-        'scripts/XRegExp.js',
-        'scripts/shCore.js',
-        'scripts/shAutoloader.js',
-    ];
+        $this->css[] = 'styles/shCore' . $theme . '.css';
+        $this->css[] = 'styles/shTheme' . $theme . '.css';
+        $this->css[] = self::$fix ? 'fix.css' : '';
+
+        $this->js = [
+            'scripts/XRegExp.js',
+            'scripts/shCore.js',
+            'scripts/shAutoloader.js',
+        ];
+    }
 
     public $depends = [
         'yii\web\YiiAsset'
     ];
-
 
     public static function register($view)
     {

@@ -10,6 +10,7 @@ Code syntax highlighting on your web page
 <?php
 use common\assets\SyntaxHighlighterAsset;
 
+SyntaxHighlighterAsset::$theme = SyntaxHighlighterAsset::THEME_FADE_TO_GREY;
 SyntaxHighlighterAsset::register($this);
 ?>
 
